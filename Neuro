@@ -1,0 +1,184 @@
+Human brain weight, volume, neuroncount, synapsecount
+1.5kg, 1.1 liters, 86 billion ~ 100 billion = 10^11 and 10^15
+Weight and neuroncount of Smoky Shrew, Short-tailed Shrew, Star-nosed Mole, Eastern Mole
+Smoky Shrew:$0.18g, 36M|Short-tailed Shrew:$0.35g, 52M|Star-nosed Mole:$0.80g, 131M|Eastern Mole:$1g, 204M
+Weight and neuroncount of Mouse, Hamster, Rat, Guinea Pig
+Mouse:$0.4g, 71M|Hamster:$1g, 90M|Rat:$1.8g, 200M|Guinea Pig:$3.8g, 240M
+Weight and neuroncount of Marmoset, Agouti, Galago, Capybara
+Marmoset:$7.8g, 634M|Agouti:$18g, 857M|Galago:$10g, 936M|Capybara:$76g, 1.6B
+Weight and neurocount of Owl Monkey, Squirrel Monkey, Capuchin Monkey, Macaque Monkey
+Owl Monkey:$16g, 1.5B|Squirrel Monkey:$30g, 3.2B|Capuchin Monkey:$53g, 3.7B|Macaque Monkey:$87g, 6.4B
+Number of genes and base pairs in humans
+2.5*10^4 and 3*10^9
+CNS
+Central Nervous System|The brain and spinal cord as well as the retina and optic nerves belong to the CNS
+PNS
+Peripheral Nervous System|The ganglia and nerve fibres from sensory recentors and to muscles and organs
+Meninges
+The brain and spinal cord are protected by three layers collectively known as menginges:|dura-mater: A thick leather-like inelastic layer present directly below the bone.||arachnoid-mater: A thin, delicate, middle layer present directly below the dura-mater. Has spider web like filamentous extensions into the sub-arachnoid space which reach the pia-mater||pia-mater: A thin, delicate, translucent layer that directly lines the gyri/sulci of the brain, and the spinal cord. Rich in blood-vessels that supply oxygen and nutrients to the brain. Functionally, it forms the blood brain barrier (BBB).
+CSF
+Cerebrospinal fluid|A pool of fluid cushioning the brain and spinal cord. CSF is produced by the choroid plexus in the ventricles of the brain. In the cranium (skull), the cerebrospinal fluid is present in the sub-arachnoid space, in between the arachnoid-mater and the pia-mater.
+Brain regions during development
+Forebrain (Prosencephalon) which can be further sub-divided into:| - Telencephalon: develops into the cerebral cortex, basal ganglia, hippocampal formation, amygdala| - Diencephalon: gives rise to structures like the thalamus, hypothalamus and the pituitary gland.||Midbrain (Mesencephalon): tectum and tegmentum, which exist in all vertebrate brains. The tectum in the mammalian brain consists of the superior colliculus and the inferior colliculus.||Hindbrain (Rhombencephalon): consists of the Metencephalon (develops into the pons, cerebellum) and the Myelencephalon (develops into the medulla oblongata)
+Telencephalon Regions
+The cerebral cortex (neocortex) is anatomically divided into 4 lobes||frontal lobe: comprises of the motor/pre-motor areas required for motor execution and other association areas required for cognition. The frontal lobe in humans specifically contains the language production centre (Brocas area) . Higher mammals such as primates (humans/great apes) have an additional lobe anterior to the frontal lobe known as the pre-frontal lobe which is responsible for higher order cognitive processing.||parietal lobe: separated from the frontal lobe by the central sulcus. Primary lobe for somatosensory processing (afferent inputs from receptors in the skin). Additionally, subserves other sensori-motor functions.||temporal lobe: separated from the frontal and parietal lobe by the lateral fissure (Sylvian fissure). Involved in auditory processing and language comprehension (Wernickes area). Additionally, responsible for visual object recognition. The medial portion of the temporal lobe includes a portion of the hippocampal formation which is involved in formation of new memories||occipital lobe: the most posterior part of the cerebral cortex which is involved in visual processing.
+Diencephalon Regions
+Thalamus: composed of several nuclei which act as relay stations to transmit information to and from neocortex.|Hypothalamus: required for regulation of autonomic bodily functions|Pituitary Gland: regulation of the endocrine (hormonal) system
+Gray Matter vs White Matter
+|Gray Matter: neuronal cell bodies, dendrites, unmyelinated axons which comprise local connections. In mammals, grey matter is organized into laminae (layers) and is termed the neocortex||White Matter: myelinated axons which comprise long-range inter-areal connections
+corpus callosum
+Connection of two cerebral hemispheres
+Proportion of neocortex and associated regions to the entire brain
+80-85%
+Number of nerve fibres carrying visual information out of the retina to the thalamus
+1 million for each eye.
+Meters of axon contained by 1mm^3 of gray matter and white matter
+4'000m for gray matter, 9m for white matter
+Neuron parts
+From input to output neurons have 4 parts:|Dendrite|Soma|Axon|Synapse||Dendrites recieve input from other neurons and transmit these to the soma. The soma is the neuron nucleus and can fire resulting in a signal which is transmitted by the axon to the synapses which transmit the signals to further neurons.
+Hyperpolarization
+Neurons are hyperpolarized which means the have a resting potential of -70 mV withing and 0 mV outside of them. Hyperpolarization refers to an increase in membrane potential whereas depolarization refers to a decrease in membrane potential
+Synaptice Currents
+Excitatory/Inhibitory Current: Positive/Negative charge resulting from from the difference in extra and intracellular space.|Leak Current: Current which leaves the intracellular space before reaching the soma.
+Action Potential Components
+Action potentials are all or nothing operations which have four components which take place over the course of 1-2 ms:||Depolarization|Overshoot|Repolarization/Hyperpolarization|Refactory Period
+Myelination
+Some axons are covered by a myelin sheet which acts as an electrical insulator. This helps increase propagation speed, reduces energy costs and is what makes white matter white.
+Synapses
+Each neuron has on average 10^4 synapses. These synapses connect to dendrites to give local input, the soma to give a global input and to axons to allow for output. A Neuron needs ~25 inputs to fire which may be a result of temporal and spatial summation.
+Human brain mass and energy consumption
+2% of mass 20% of energy consumption
+Chemical currents of Chloride, Potassium and Sodium
+Chloride: -65mV, Potassium: -90mv, Sodium: 55mV. The latter two are sent out during action potentials.
+Membrane Potential
+Vm = Vi - Vo
+Ernst Equation
+K+ Equilibrium Potential := E_k = (RT)/(zF) ln (K+inside/K+outside) ~ 58 * ln (K+inside/K+outside)
+Action Potential Chemical Changes
+Natrium increases quickly until inactivation kicks in and it decreases again. K+ increases more slowly and only decreases once the voltage has decreased. The threshold for an AP is where the inward Na+ current exactly balances the outward K+ current.
+Hebb's Postulate
+may be summarised as: "Neurons that fire together wire together"
+Pavlovian Conditioning
+Given a reaction to some stimulus A, that reaction can be achieved by stimulating continuously and simultaneously with A and some other stimulous B until eventually A can be removed without changing the reaction.
+NMDA Synapse
+NMDA Synapses can work as coincidence detectors for pre and postsynaptic firing. Calcium receptors are critical for such synapses. Strong NMDA receptor activations should result in potentiation and weak activations in depression.
+LTP and LTD acronyms
+Long term potentiation and long term depression
+LTP Properties
+Long term potentiation has the following properties:|For LTP to occur, both the synapse and the post-synaptic neuron must simultaneously be depolarized beyond a threshold.|LTP is input specific: LTP can enhance the synaptic effectiveness of a synapse without affecting other synapses in the cell. This specificity is largely due to the compartmentalization offered by dendritic spines, and greatly increases the storage capacity of individual neurons.|LTP is cooperative: weak stimulations in single pathways can cooperatively induce LTP.|LTP is associative: weak stimulation in pathways, when coupled with strong stimulation in other pathways, can induce LTP.|Stimuli must be delivered at high frequency, because the post-synaptic cell must be depolarized past a certain threshold for LTP to occur.|LTP has a transient early (lasting 1-3 hours) phase, followed by a consolidated later phase (at least 24 hours). In the early phase the conductance of the post synaptic site is enhanced without the need for new protein synthesis. The later phase does require new protein and RNA synthesis, which results in the construction of new presynaptic active zones and postsynaptic receptors.
+STDP
+Spike Timing Dependent Plasticity|Not only correlation, but also timing of spikes determines plasticity. Interplay of NMDA receptors and backpropagating action potential is believed to create timing-dependence of plasticity. Sign of plasticity is determined by local calcium concentration. Postsynaptic spike travels back to the dendritic tree and activates voltage-dependent Ca channels. Presynaptic activity can allow Ca influx through NMDA channels (if postsynaptic part is sufficiently depolarized). If pre-spike is soon afterwards followed by post-spike, NMDA-R activity is supralinearly enhanced by depolarization due to backpropagating spike.
+Factors influencing neuron plasticity
+Different plasticity in different brain areas|Diversity of neuron and synapse types|Large number of control parameters for plasticity experiments (frequency, timing, postsynaptic voltage, position on the dendrite, ...)|Influence of neuromodulators, calcium, drugs, and various proteins|Long-term vs. short-term effects
+Dopamine
+Dopamine is a neurotransmitter and neuromodular. It is significant for motor processes, for our sense of pleasure or reward as well as for attentional, motivational and emotional states. DA is a rather homogeneous, global population signal. DA activation is related to rewarding stimuli or reward prediction errors.
+LFP
+Local field potentials are low-pass filtered recordings of extracellular activity. They are dominated by dendridic synaptic activity.
+fMRI
+Functional Magnetic Resonance Imaging.
+Spatial Receptive Fields
+Two neurons in cat primary visual cortex: simple cells with averaging stimuli 50ms and 100ms before spike. This leads to orientation selectivity.
+VLSI
+Very Large Scale Integration technology
+Types of stimuli
+Taste, pressure, temperature, smell, light
+association cortex
+Defined by exclusion as those neocortical regions that are not involved in primary sensory or motor processing.
+cerebral cortex
+The superficial gray matter of the cerebral hemispheres.
+corpus callosum
+The large midline fiber bundle that connects the cortices of the two cerebral hemispheres.
+cortex
+The superficial mantle of gray matter (a sheet-like array of nerve cells) covering the cerebral hemispheres and cerebellum, where most of the neurons in the brain are located.
+gray matter
+General term that describes regions of the central nervous system rich in neuronal cell bodies and neuropil; includes the cerebral and cerebellar cortices, the nuclei of the brain, and the central portion of the spinal cord.
+gyrus
+The ridges of the infolded cerebral cortex (the valleys between these ridges are called sulci).
+limbic system
+Term that refers to those cortical and subcortical structures concerned with the emotions; the most prominent components are the cingulate gyrus, the hippocampus, and the amygdala.
+neocortex
+The six-layered cortex that forms the surface of most of the cerebral hemispheres.
+spinal cord
+The portion of the central nervous system that extends from the lower end of the brainstem (the medulla) to the cauda equina
+white matter
+A general term that refers to large axon tracts in the brain and spinal cord; the phrase derives from the fact that axonal tracts have a whitish cast when viewed in the freshly cut material.
+afferent
+A neuron or axon that conducts action potentials from the periphery toward the central nervous system.
+efferent
+A neuron or axon that conducts information away from the central nervous system toward the periphery.
+interneuron
+Technically, a neuron in the pathway between primary sensory and primary effector neurons; more generally, a neuron whose relatively short axons branch locally to innervate other neurons. Also known as local circuit neuron.
+neurotransmitter
+Substance released by synaptic terminals for the purpose of transmitting information from one cell (the presynaptic cell) to another (the postsynaptic cell).
+Ohm's Law
+V = R*I
+Kirchhoff's Current Law
+The sum of all currents entering and leaving any node in a circuit is zero.
+Kirchhoff's Voltage Law
+The sum of all voltages around a closed loop is equal to zero.
+Na, K, Ca, Cl
+Sodium, Potasium, Calcium, Chloride
+Cell Resistor 
+Ion Channel
+Cell Capacitance
+Lipid bilayer
+Cell Battery
+Ionic concentration gradient
+Synapse length
+1 micro m
+neuron length
+100 micro m
+Basal Ganglia Function
+Regulate voluntary movement
+Cerebellum Function
+Coordinated motor behavior|Postural Adjustments
+Hypothalamus details
+required for regulation of autonomic bodily functions
+frontal lobe details
+comprises of the motor/pre-motor areas required for motor execution and other association areas required for cognition. The frontal lobe in humans specifically contains the language production centre (Brocas area) . Higher mammals such as primates (humans/great apes) have an additional lobe anterior to the frontal lobe known as the pre-frontal lobe which is responsible for higher order cognitive processing.
+parietal lobe details
+separated from the frontal lobe by the central sulcus. Primary lobe for somatosensory processing (afferent inputs from receptors in the skin). Additionally, subserves other sensori-motor functions.
+temporal lobe details
+separated from the frontal and parietal lobe by the lateral fissure (Sylvian fissure). Involved in auditory processing and language comprehension (Wernickes area). Additionally, responsible for visual object recognition. The medial portion of the temporal lobe includes a portion of the hippocampal formation which is involved in formation of new memories
+occipital lobe details
+the most posterior part of the cerebral cortex which is involved in visual processing.
+Basal ganglia details
+sub-cortical structure significantly involved in motor learning and control. Degeneration of a subset of dopaminergic neurons in the basal ganglia results in Parkinsons disease.
+Hippocampal formation details
+required for consolidation of short term memory into long term memory.
+Amygdala details
+centre for emotional processing and is strongly linked to the olfactory senses (sense of smell).
+Thalamus details
+composed of several nuclei which act as relay stations to transmit information to and from neocortex.
+Pituitary Gland
+regulation of the endocrine (hormonal) system
+Similarities between brain and computer
+Process information|Logical operations|Memory|Use electrical (digital) signaling|Can learn from input|Consume energy
+Differences between brain and computer
+Massive parallelism|Separation of memory and processing|Constantly adapting|Chemical signaling|Unreliable units|Analog computation|Robust to damage|Very energy efficient
+Number of Nerve Cells (C. Elegans, Fruit fly, Honey Bee, Frog, Mouse, Cat, Chimpanzee, Human)
+C. Elegans$302|Fruit fly$100K|Honey Bee$960K|Frog$16M|Mouse$75M|Cat$1B|Chimpanzee$6.7B|Human$85B
+# of neurons, synapses, genes and base pairs in human
+10^11$10^15$25k$3B
+Size of amoeba dubia genome
+200x human genome
+Excitatory receptors at dendrites (name, V(drive))
+AMPA/NMDA, maxed cation V(drive) = ~0mV
+Inhibitory receptors at dendrites (Name, [Molecule], V(drive))
+GABA A, Cloride(Cl), V(drive) = -65mV|GABA B, Potassium(K), V(drive) = -90mV
+Nernst Equation
+Reversal potential for each ion type|E_k = RT/zF ln [K+]_o/[K+]_i
+Goldman-Hodgkin-Katz Equation
+Resting membrane potential|V_m = RT/F ln (P_K[K+]_a + P_Na[Na+]_a + P_Cl[Cl-]_i)/(P_K[K+]_i + P_Na[Na+]_i + P_Cl[Cl-]_a)
+Perceptron formula (1 layer)
+f(x) = w*x+b > 0 ? 1 : 0|w$weights|w*x$dot product|b$bias|linearly separable
+Hopfield network
+Recurrent artificial neural network (John Hopfield, 1982)|Model for understanding human memory|Network cannot return to previous state (no cycle)|Network always enters stable state
+Hopfield net
+Complete undirected graph G = (V,f)|V$set of neurons|f:V^2 -> R$pairs of nodes to connectivity wheight|No unit has connection with itself|Connections are symmetric
+Hopfield net updating
+s_i = sum_j(w_ij * s_j >= theta_i ? +1 : -1|w_ij$connection weight from unit i to j|s_j$state of unit j|theta_i$threshold of unit i
+Difference perceptron to Hopfield network
+Tresholds of neurons never updated in Hopfield network
+Feed-forward network
+Neural network without loops or cycle|Input layer -> (Hidden layer)* -> Output
