@@ -7,6 +7,8 @@ Jonathan Rosenthal, Frédéric Vogel
 ## Compilation
 The program has to be compiled using the C++11 standard.
 
+`g++ -std=c++11 -wall FlashCard.cpp -o FlashCard`
+
 ## Execution
 The program is executed by calling ./FlashCard in the same directory as the program.
 It can either be called with the name(s) of flashcard files as arguments or without. If called without
