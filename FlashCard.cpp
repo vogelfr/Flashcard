@@ -20,6 +20,9 @@ return cards[num];
 
 string DELIMITER = "\n\e[4m                                                  \e[0m\n";
 string LINE_COMMENT = "//";
+string VERSION = "2.0.2";
+string ARG_VERSION = "--version";
+string LAST_UPDATED = "Jan. 2017";
 
 vector<string> &splits(const std::string &s, char delim, std::vector<std::string> &elems) {
     stringstream ss(s);
@@ -62,6 +65,17 @@ int main(int argc, char *argv[]) {
 	if (argc > 1) {
 		int count = 0;
 		for (int i = 1; i < argc; i++) {
+			// test for arguments other than card files
+			if (argv[i] == ARG_VERSION) {
+				std::cout << "Flashcard tool version " << VERSION << "\nLast updated "<<LAST_UPDATED<<std::endl;
+				// if there was no file specified after/before --version, exit
+				if(argc < 3){
+					exit(0);
+				}
+				continue;
+			
+			}
+			// if argument is probably a filename
 			fileName = argv[i];
 			ifstream afile(fileName);
 			addCards(afile, cards);
