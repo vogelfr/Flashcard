@@ -7,7 +7,7 @@ Jonathan Rosenthal, Frédéric Vogel
 ## Compilation
 The program has to be compiled using the C++11 standard.
 
-`g++ -std=c++11 -wall FlashCard.cpp -o FlashCard`
+`g++ -std=c++11 -Wall FlashCard.cpp -o FlashCard`
 
 ## Execution
 The program is executed by calling ./FlashCard in the same directory as the program.
@@ -18,7 +18,7 @@ the program will ask for the name of the flashcard file, which must be in the sa
 The flashcard file contains n flashcards in the following manner:
 - On the (2*i)-th line, delimited by '\n', the front of the i-th card.
 - On the ((2*i)+1)-th line, delimited by '\n', the back of the i-th card.
-The following symbols have special meaning:
+  The following symbols have special meaning:
 - '\n': Delimits the front from the back from the front and so on
 - '|':  Delimits a new line *inside* of the card
 - '$':  Delimits a tab character *inside* of the card

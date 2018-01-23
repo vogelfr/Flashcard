@@ -19,6 +19,7 @@ return cards[num];
 }
 
 string DELIMITER = "\n\e[4m                                                  \e[0m\n";
+string LINE_COMMENT = "//";
 
 vector<string> &splits(const std::string &s, char delim, std::vector<std::string> &elems) {
     stringstream ss(s);
@@ -38,7 +39,15 @@ vector<string> split(const std::string &s, char delim) {
 void addCards(ifstream &file, vector< pair<string, string> > &cards) {
 string key, value;
 while (getline(file, key)) {
-getline(file, value);
+	// if it starts with a line comment "//", ignore that line completely
+	if(key.substr(0,LINE_COMMENT.size())==LINE_COMMENT){
+		continue;
+	}
+	// else get the value to that key. But if it is a comment, skip until it is not
+	do{
+		getline(file, value);
+	} while (value.substr(0,LINE_COMMENT.size())==LINE_COMMENT);
+
 cards.emplace_back(key,value);
 #ifdef DEBUG
 cout << "Added card pair (" << key << ", " << value << ")" << endl;
@@ -78,6 +87,7 @@ int main(int argc, char *argv[]) {
 		vector<string> lines = split(card.second, '|');
 		int count = lines.size();
 		for (string line : lines) {
+		
 			vector<string> chunks = split(line, '$');
 			int chunkcount = chunks.size();
 			for (string chunk : chunks) {
