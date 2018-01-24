@@ -115,9 +115,12 @@ int main(int argc, char *argv[]) {
 						lineToPrint.append("\t");
 					}
 					// delete the current line and write it anew
-					// prepend "\033[A" to also rewrite the previous line
-					cout << (firstChunkInLine ? "" :"\33[2K\r") << lineToPrint; // rewrite the current line if this is not the first chunk in the line.
+					// prepend "\033[A" to also clear the previous line
+					// prepend \33[2K to clear the current line
+					// prepend \r to return the cursor to the start of the current line
+					cout << (firstChunkInLine ? "" :"\033[A\033[A\33[2K\r") << lineToPrint << std::endl; // rewrite the current line if this is not the first chunk in the line.
 					firstChunkInLine = false;
+					cin.peek();
 
 			}
 
