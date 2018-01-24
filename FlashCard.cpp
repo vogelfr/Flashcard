@@ -119,8 +119,13 @@ int main(int argc, char *argv[]) {
 					// prepend \r to return the cursor to the start of the current line
 					string prepend = "";
 					if(firstLineInCard){
-						// only rewrite the current line
-						prepend = "\33[2K\r";
+						// only rewrite the current line, unless this is not the first chunk
+						if(firstChunkInLine){
+							prepend = "\33[2K\r";
+						} else {
+							// same as if not first line
+							prepend = "\033[A\33[2K\r";
+						}
 					} else {
 						if(firstChunkInLine){
 							prepend = "";
