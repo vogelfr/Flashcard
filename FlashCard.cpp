@@ -100,15 +100,14 @@ int main(int argc, char *argv[]) {
 		cin.get();
 		vector<string> lines = split(card.second, '|');
 		int count = lines.size();
+		bool firstLineInCard = true; // used to make sure that no card key is overwritten by the tab mechanism for $
 		for (string line : lines) {
-		
 			vector<string> chunks = split(line, '$');
 			int chunkcount = chunks.size();
 			string lineToPrint = ""; // used to rewrite the line after the user pressed enter to show the words after \t
 			bool firstChunkInLine = true;
 			for (string chunk : chunks) {
 					lineToPrint.append(chunk);
-					cout << std::flush; // Needed to see the changes within the same line.
 				
 					if (chunkcount > 1) {
 						chunkcount--;
@@ -118,16 +117,31 @@ int main(int argc, char *argv[]) {
 					// prepend "\033[A" to also clear the previous line
 					// prepend \33[2K to clear the current line
 					// prepend \r to return the cursor to the start of the current line
-					cout << (firstChunkInLine ? "" :"\033[A\033[A\33[2K\r") << lineToPrint << std::endl; // rewrite the current line if this is not the first chunk in the line.
+					string prepend = "";
+					if(firstLineInCard){
+						// only rewrite the current line
+						prepend = "\33[2K\r";
+					} else {
+						if(firstChunkInLine){
+							prepend = "";
+						} else {
+							// rewrite the previous line because there was a newline. I don't know where that newline is added, maybe it's directly from the flashcard inputfile.
+							prepend = "\033[A\33[2K\r";
+						}
+					}
+					//
+					cout << prepend << lineToPrint << std::flush;
 					firstChunkInLine = false;
 					cin.peek();
 
 			}
+			cout << std::endl;
 
 			if (count > 1) {
 				count--;
 				cin.get();
 			}	
+			firstLineInCard = false;
 		}
 		cout << DELIMITER;
 	}
