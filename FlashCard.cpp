@@ -108,19 +108,20 @@ int main(int argc, char *argv[]) {
 			bool firstChunkInLine = true;
 			for (string chunk : chunks) {
 					lineToPrint.append(chunk);
+					lineToPrint.append(" ,, ");
 				
 					if (chunkcount > 1) {
 						chunkcount--;
 						lineToPrint.append("\t");
 						// delete the previous line and write it anew
-						cout << lineToPrint << (firstChunkInLine ? ' ':'\r'); // rewrite the previous line if this is not the first chunk in the line. (' ' could also be no char at all, but I was too lazy to type that if statement)
+						cout << lineToPrint << (firstChunkInLine ? "" :"\33[2K\r"); // rewrite the previous line if this is not the first chunk in the line. (' ' could also be no char at all, but I was too lazy to type that if statement)
 						firstChunkInLine = false;
 						if (cin.peek() == '\n') {
 							
 						}
 					} else {
 						// no need for an additional \t and then waiting for user input. But still want to rewrite the line
-						cout << lineToPrint << (firstChunkInLine ? ' ':'\r') << std::endl;
+						cout << lineToPrint << (firstChunkInLine ? "":"\33[2K\r");
 						firstChunkInLine = false;
 					}
 			}
