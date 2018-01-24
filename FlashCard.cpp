@@ -96,11 +96,11 @@ int main(int argc, char *argv[]) {
 	cout << "Beginning training!!" << DELIMITER;
 	while (true) {
 		pair<string, string> card = getRandomCard(cards);
-		cout << "\e[1;96m" << card.first << "\e[0m";
+		cout << "\e[1;96m" << card.first << "\e[0m"; // escape characters for bold text
 		cin.get();
 		vector<string> lines = split(card.second, '|');
 		int count = lines.size();
-		bool firstLineInCard = true; // used to make sure that no card key is overwritten by the tab mechanism for $
+		bool firstLineInCard = true; // used to make sure that no card key is overwritten by the tab mechanism for $. This is not about the file lines but about lines within the displayed card.
 		for (string line : lines) {
 			vector<string> chunks = split(line, '$');
 			int chunkcount = chunks.size();
@@ -121,7 +121,7 @@ int main(int argc, char *argv[]) {
 					if(firstLineInCard){
 						// only rewrite the current line, unless this is not the first chunk
 						if(firstChunkInLine){
-							prepend = "\33[2K\r";
+							prepend = "\n\33[2K\r";
 						} else {
 							// same as if not first line
 							prepend = "\033[A\33[2K\r";
@@ -141,12 +141,12 @@ int main(int argc, char *argv[]) {
 
 			}
 			cout << std::endl;
-
+			firstLineInCard = false;
+			
 			if (count > 1) {
 				count--;
 				cin.get();
 			}	
-			firstLineInCard = false;
 		}
 		cout << DELIMITER;
 	}
