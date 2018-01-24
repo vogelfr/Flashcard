@@ -22,7 +22,7 @@ string DELIMITER = "\n\e[4m                                                  \e[
 string LINE_COMMENT = "//";
 string VERSION = "2.0.2";
 string ARG_VERSION = "--version";
-string LAST_UPDATED = "Jan. 2017";
+string LAST_UPDATED = "Jan. 2018";
 
 vector<string> &splits(const std::string &s, char delim, std::vector<std::string> &elems) {
     stringstream ss(s);
@@ -104,14 +104,24 @@ int main(int argc, char *argv[]) {
 		
 			vector<string> chunks = split(line, '$');
 			int chunkcount = chunks.size();
+			string lineToPrint = ""; // used to rewrite the line after the user pressed enter to show the words after \t
+			bool firstChunkInLine = true;
 			for (string chunk : chunks) {
-					cout << chunk;
+					lineToPrint.append(chunk);
+				
 					if (chunkcount > 1) {
 						chunkcount--;
-						cout << '\t';
+						lineToPrint.append("\t");
+						// delete the previous line and write it anew
+						cout << lineToPrint << (firstChunkInLine ? ' ':'\r'); // rewrite the previous line if this is not the first chunk in the line. (' ' could also be no char at all, but I was too lazy to type that if statement)
+						firstChunkInLine = false;
 						if (cin.peek() == '\n') {
-							//TODO: Somehow make it print on the same line....
+							
 						}
+					} else {
+						// no need for an additional \t and then waiting for user input. But still want to rewrite the line
+						cout << lineToPrint << (firstChunkInLine ? ' ':'\r') << std::endl;
+						firstChunkInLine = false;
 					}
 			}
 
