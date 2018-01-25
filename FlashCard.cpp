@@ -120,9 +120,11 @@ int main(int argc, char *argv[]) {
 					string prepend = "";
 					string append = "";
 					if(firstLineInCard){
-						// only rewrite the current line, unless this is not the first chunk
+						// only rewrite the current line, unless this is not the first chunk.
+						// but then, print also a newline because otherwise it will look ugly (it would move the line upwards after the first chunk)
 						if(firstChunkInLine){
 							prepend = "\33[2K\r";
+							append = "\n\033[A"; // see above description: adds an empty line on the bottom but keeps the cursor on top
 						} else {
 							// same as if not first line
 							prepend = "\033[A\33[2K\r";
@@ -130,6 +132,7 @@ int main(int argc, char *argv[]) {
 					} else {
 						if(firstChunkInLine){
 							prepend = "";
+							append = "\n\033[A"; // see above description: adds an empty line on the bottom but keeps the cursor on top
 						} else {
 							// rewrite the previous line because there was a newline. I don't know where that newline is added, maybe it's directly from the flashcard inputfile.
 							prepend = "\033[A\33[2K\r";
