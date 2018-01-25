@@ -19,6 +19,7 @@ return cards[num];
 }
 
 string DELIMITER = "\n\e[4m                                                  \e[0m\n";
+string DELIMITER_WITHOUT_NEWLINES = "\e[4m                                                  \e[0m";
 string LINE_COMMENT = "//";
 string VERSION = "2.0.2";
 string ARG_VERSION = "--version";
@@ -141,20 +142,14 @@ int main(int argc, char *argv[]) {
 					
 					cout << prepend << lineToPrint << append << std::flush;
 					firstChunkInLine = false;
-					if (count > 0){
-						cin.get();
-					}
+					cin.get();
 
 			}
 			//cout << std::endl;
 			firstLineInCard = false;
-			
-			if (count > 1) {
-				count--;
-			}
+			count--;
 		}
-		//cin.get();
-		cout << DELIMITER;
+		cout << DELIMITER_WITHOUT_NEWLINES << "\n";// TODO: without newline.
 	}
 
 	return 0;
