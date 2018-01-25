@@ -141,7 +141,7 @@ int main(int argc, char *argv[]) {
 					
 					cout << prepend << lineToPrint << append << std::flush;
 					firstChunkInLine = false;
-					if (count > 1){
+					if (count > 0){
 						cin.get();
 					}
 
@@ -153,8 +153,8 @@ int main(int argc, char *argv[]) {
 				count--;
 			}
 		}
-		cin.get();
-		cout << "\033[A\33[2K\r" << DELIMITER;
+		//cin.get();
+		cout << DELIMITER;
 	}
 
 	return 0;
