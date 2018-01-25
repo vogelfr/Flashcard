@@ -108,7 +108,7 @@ int main(int argc, char *argv[]) {
 			bool firstChunkInLine = true;
 			for (string chunk : chunks) {
 					lineToPrint.append(chunk);
-					// TODO: find out why it is not working for multiple tabs ($) in the same line!
+					
 					if (chunkcount > 1) {
 						chunkcount--;
 						lineToPrint.append("\t");
@@ -118,6 +118,7 @@ int main(int argc, char *argv[]) {
 					// prepend \33[2K to clear the current line
 					// prepend \r to return the cursor to the start of the current line
 					string prepend = "";
+					string append = "";
 					if(firstLineInCard){
 						// only rewrite the current line, unless this is not the first chunk
 						if(firstChunkInLine){
@@ -134,8 +135,8 @@ int main(int argc, char *argv[]) {
 							prepend = "\033[A\33[2K\r";
 						}
 					}
-					//
-					cout << prepend << lineToPrint << std::flush;
+					
+					cout << prepend << lineToPrint << append << std::flush;
 					firstChunkInLine = false;
 					if (count > 1){
 						cin.get();
