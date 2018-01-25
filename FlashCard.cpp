@@ -121,7 +121,7 @@ int main(int argc, char *argv[]) {
 					if(firstLineInCard){
 						// only rewrite the current line, unless this is not the first chunk
 						if(firstChunkInLine){
-							prepend = "\n\33[2K\r";
+							prepend = "\33[2K\r";
 						} else {
 							// same as if not first line
 							prepend = "\033[A\33[2K\r";
@@ -137,10 +137,12 @@ int main(int argc, char *argv[]) {
 					//
 					cout << prepend << lineToPrint << std::flush;
 					firstChunkInLine = false;
-					cin.get();
+					if (count > 1){
+						cin.get();
+					}
 
 			}
-			cout << std::endl;
+			//cout << std::endl;
 			firstLineInCard = false;
 			
 			if (count > 1) {
