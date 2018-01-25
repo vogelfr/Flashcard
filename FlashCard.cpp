@@ -151,10 +151,10 @@ int main(int argc, char *argv[]) {
 			
 			if (count > 1) {
 				count--;
-				//cin.get();
-			}	
+			}
 		}
-		cout << DELIMITER;
+		cin.get();
+		cout << "\033[A\33[2K\r" << DELIMITER;
 	}
 
 	return 0;
