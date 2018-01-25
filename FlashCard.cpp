@@ -108,7 +108,7 @@ int main(int argc, char *argv[]) {
 			bool firstChunkInLine = true;
 			for (string chunk : chunks) {
 					lineToPrint.append(chunk);
-				
+					// TODO: find out why it is not working for multiple tabs ($) in the same line!
 					if (chunkcount > 1) {
 						chunkcount--;
 						lineToPrint.append("\t");
