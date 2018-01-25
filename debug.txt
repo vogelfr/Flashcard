@@ -1,5 +1,5 @@
 debug
 //TEST
-Smoky Shrew:$0.18g, 36M|Short-tailed Shrew:$0.35g, 52M|Star-nosed Mole:$0.80g, 131M|Eastern Mole:$1g, 204M
+Smoky Shrew:$test1$test2$test3|Short-tailed Shrew:$0.35g, 52M|Star-nosed Mole:$0.80g, 131M|Eastern Mole:$1g, 204M
 Weight and neuroncount of Mouse, Hamster, Rat, Guinea Pig
-Mouse:$0.4g, 71M|Hamster:$1g, 90M|Rat:$1.8g, 200M|Guinea Pig:$3.8g, 240M
+Mouse:$0.4g, 71M|Hamster:$hamster1$hamster2$hamster3|Rat:$1.8g, 200M|Guinea Pig:$3.8g, 240M

@@ -137,7 +137,7 @@ int main(int argc, char *argv[]) {
 					//
 					cout << prepend << lineToPrint << std::flush;
 					firstChunkInLine = false;
-					cin.peek();
+					cin.get();
 
 			}
 			cout << std::endl;
@@ -145,7 +145,7 @@ int main(int argc, char *argv[]) {
 			
 			if (count > 1) {
 				count--;
-				cin.get();
+				//cin.get();
 			}	
 		}
 		cout << DELIMITER;
