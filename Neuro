@@ -175,7 +175,7 @@ f(x) = w*x+b > 0 ? 1 : 0|w$weights|w*x$dot product|b$bias|linearly separable
 Hopfield network
 Recurrent artificial neural network (John Hopfield, 1982)|Model for understanding human memory|Network cannot return to previous state (no cycle)|Network always enters stable state
 Hopfield net
-Complete undirected graph G = (V,f)|V$set of neurons|f:V^2 -> R$pairs of nodes to connectivity wheight|No unit has connection with itself|Connections are symmetric
+Complete undirected graph G = (V,f)|V$set of neurons|f:V^2 -> R$pairs of nodes to connectivity weight|No unit has connection with itself|Connections are symmetric
 Hopfield net updating
 s_i = sum_j(w_ij * s_j >= theta_i ? +1 : -1|w_ij$connection weight from unit i to j|s_j$state of unit j|theta_i$threshold of unit i
 Difference perceptron to Hopfield network
