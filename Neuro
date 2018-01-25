@@ -52,8 +52,8 @@ Chemical currents of Chloride, Potassium and Sodium
 Chloride: -65mV, Potassium: -90mv, Sodium: 55mV. The latter two are sent out during action potentials.
 Membrane Potential
 Vm = Vi - Vo
-Ernst Equation
-K+ Equilibrium Potential := E_k = (RT)/(zF) ln (K+inside/K+outside) ~ 58 * ln (K+inside/K+outside)
+Nernst Equation
+K+ Equilibrium Potential := E_k = (RT)/(zF) ln (K+outside/K+inside) ≈ 58/z * log_10 (K+outside/K+inside)
 Action Potential Chemical Changes
 Natrium increases quickly until inactivation kicks in and it decreases again. K+ increases more slowly and only decreases once the voltage has decreased. The threshold for an AP is where the inward Na+ current exactly balances the outward K+ current.
 Hebb's Postulate
