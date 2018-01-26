@@ -34,6 +34,12 @@ Additionally, `--version` may be passed as an argument with or without accompany
 
 `-P` to hide progresss
 
+#### Continue where you left off
+
+*Intended for use with `-s`.* If you use it with `-r` instead, you shouldn't notice a difference. If you use it with `-R`, you get weird behaviour, so ... don't do that. (What happens is that it does not shuffle the deck for the first run through)
+
+`-c 12` sets the starting point to the 12th card (indexing starts by 1). You may use any number in the range`]0, number_of_cards]`.
+
 ## Flashcard File
 The flashcard file contains n flashcards in the following manner:
 - On the (2*i)-th line, delimited by '\n', the front of the i-th card.

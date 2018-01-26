@@ -28,6 +28,7 @@ string LAST_UPDATED = "Jan. 2018";
 string ARG_VERSION = "--version";
 string ARG_RANDOM = "-r"; string ARG_SEMIRANDOM = "-R"; string ARG_SEQUENTIAL = "-s";
 string ARG_PROGRESS = "-p"; string ARG_NO_PROGRESS = "-P";
+string ARG_CONTINUE = "-c";
 
 
 // Only use either getRandomCard, getNextCard or getSequentialCard unless you have made sure you noticed that they might use the same global variables.
@@ -150,6 +151,36 @@ int main(int argc, char *argv[]) {
 				continue;
 			} else if (argv[i] == ARG_NO_PROGRESS){
 				show_progress = 0;
+				continue;
+			}
+			
+			// set current_card_index to specified
+			if (argv[i] == ARG_CONTINUE) {
+				// see if the flag is followed by a valid index. if not, error and exit. if yes, take it and skip it.
+				if (i>=argc-1) {
+					// this is the last argument
+					std::cout << "The continue flag requires a number after it" << std::endl;
+					exit(1);
+				}
+				int number;
+				try{
+					number = std::stoi(argv[i+1]);
+				} catch (std::exception const &e){
+					// need a NUMBER, not something else
+					std::cout << "The continue flag requires a number after it" << std::endl;
+					exit(1);
+				}
+				if(number<=0){
+					// it should be positive!
+					std::cout << "The continue flag requires a POSITIVE number" << std::endl;
+					exit(1);
+				}
+				// decrease number to match the 0-indexing
+				number--;
+				current_card_index = number;
+				
+				// skip the next argument, because we already read it now
+				i++;
 				continue;
 			}
 			
