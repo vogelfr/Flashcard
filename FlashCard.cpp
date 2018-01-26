@@ -18,12 +18,39 @@ int num = rng() % cards.size();
 return cards[num];
 }
 
+// get the cards in random order, but get all of them before starting over with a new random order
+// shuffles the passed vector
+int current_card_index = 0; // pls don't modify this outside of this function
+pair<string, string> getNextCard(vector< pair<string, string> > &cards) {
+	if(current_card_index == 0){
+		std::random_shuffle(std::begin(cards) std::end(cards));
+	}
+	current_card_index ++;
+	// if the new index is too large, scale it back down. This should usually result in 0 and thus the next call to this function will shuffle again
+	if ( current_card_index >= cards.size() ){
+		current_card_index = current_card_index % cards.size();
+	}
+	return cards[current_card_index];
+}
+
+// constants used in the code
 string DELIMITER = "\n\e[4m                                                  \e[0m\n";
 string DELIMITER_WITHOUT_NEWLINES = "\e[4m                                                  \e[0m";
 string LINE_COMMENT = "//";
+// constants that you should update from time to time (manually)
 string VERSION = "2.0.2";
-string ARG_VERSION = "--version";
 string LAST_UPDATED = "Jan. 2018";
+// arguments that are handled
+string ARG_VERSION = "--version";
+string ARG_RANDOM = "-r"; string ARG_SEMIRANDOM = "-R";
+
+int getcard_version = 0; // set the version to either 0 (normal) or 1 (only show the same card again after having shown every other card)
+
+// get either a random card or a semirandom card, depending on how getcard_version is set
+pair<string, string> getCard(vector< pair<string, string> > &cards) {
+	pair<string, string> ret = (getcard_version == 0) ? getRandomCard(cards) : getNextCard(cards);
+	return ret;
+}
 
 vector<string> &splits(const std::string &s, char delim, std::vector<std::string> &elems) {
     stringstream ss(s);
@@ -62,25 +89,34 @@ cout << "Added card pair (" << key << ", " << value << ")" << endl;
 
 int main(int argc, char *argv[]) {
 	vector< pair<string, string> > cards;
-	string fileName;
+	string fileName = "";
 	if (argc > 1) {
 		int count = 0;
 		for (int i = 1; i < argc; i++) {
 			// test for arguments other than card files
 			if (argv[i] == ARG_VERSION) {
 				std::cout << "Flashcard tool version " << VERSION << "\nLast updated "<<LAST_UPDATED<<std::endl;
-				// if there was no file specified after/before --version, exit
-				if(argc < 3){
-					exit(0);
-				}
 				continue;
 			
 			}
+			
+			// toggle getRandomCard() or getNextCard()
+			if (argv[i] == ARG_RANDOM) {
+				getcard_version = 0;
+			} else if (argv[i] == ARG_SEMIRANDOM){
+				getcard_version = 1;
+			}
+			
 			// if argument is probably a filename
 			fileName = argv[i];
 			ifstream afile(fileName);
 			addCards(afile, cards);
 			count += cards.size();
+		}
+		
+		if(fileName == ""){
+			std::cout << "No filename was specified." << std::endl;
+			exit(0);
 		}
 		cout << "Successfully added " << cards.size() << " cards!" << endl;
 	} else {
@@ -96,7 +132,7 @@ int main(int argc, char *argv[]) {
 	}
 	cout << "Beginning training!!" << DELIMITER;
 	while (true) {
-		pair<string, string> card = getRandomCard(cards);
+		pair<string, string> card = getCard(cards); // get (default) a random card or (if passed -R) a semirandom card (random, but never repeated unless no cards left)
 		cout << "\e[1;96m" << card.first << "\e[0m"; // escape characters for bold text
 		cin.get();
 		vector<string> lines = split(card.second, '|');
