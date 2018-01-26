@@ -6,6 +6,7 @@
 #include <random>
 #include <sstream>
 #include <stdio.h>
+#include <algorithm>
 
 //#define DEBUG
 
@@ -20,10 +21,10 @@ return cards[num];
 
 // get the cards in random order, but get all of them before starting over with a new random order
 // shuffles the passed vector
-int current_card_index = 0; // pls don't modify this outside of this function
+unsigned int current_card_index = 0; // pls don't modify this outside of this function
 pair<string, string> getNextCard(vector< pair<string, string> > &cards) {
 	if(current_card_index == 0){
-		std::random_shuffle(std::begin(cards) std::end(cards));
+		std::random_shuffle(std::begin(cards), std::end(cards));
 	}
 	current_card_index ++;
 	// if the new index is too large, scale it back down. This should usually result in 0 and thus the next call to this function will shuffle again
