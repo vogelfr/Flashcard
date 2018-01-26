@@ -1,7 +1,7 @@
 # Flashcard
 Small flashcard programm
 
-FlashCard v2.0.2
+FlashCard v2.0.3
 Jonathan Rosenthal, Frédéric Vogel, Eric Mink
 
 ## Compilation
@@ -18,9 +18,13 @@ Additionally, `--version` may be passed as an argument with or without accompany
 
 #### Card sorting options
 
+*These are mutually exclusive*. The last specified will be used if you provide multiple.
+
 `-r` for random cards
 
 `-R` for random cards that have not yet been shown. This option basically re-shuffles the deck when you're through all cards and then goes through it sequentially.
+
+`-s`for sequential loading of cards.
 
 ## Flashcard File
 The flashcard file contains n flashcards in the following manner:

@@ -14,6 +14,20 @@ using namespace std;
 
 random_device rng;
 
+
+// constants used in the code
+string DELIMITER = "\n\e[4m                                                  \e[0m\n";
+string DELIMITER_WITHOUT_NEWLINES = "\e[4m                                                  \e[0m";
+string LINE_COMMENT = "//";
+int DEFAULT_CARD_SORTING = 0;
+// constants that you should update from time to time (manually)
+string VERSION = "2.0.3";
+string LAST_UPDATED = "Jan. 2018";
+// arguments that are handled
+string ARG_VERSION = "--version";
+string ARG_RANDOM = "-r"; string ARG_SEMIRANDOM = "-R"; string ARG_SEQUENTIAL = "-s";
+
+
 // Only use either getRandomCard, getNextCard or getSequentialCard unless you have made sure you noticed that they might use the same global variables.
 
 pair<string, string> getRandomCard(vector< pair<string, string> > &cards) {
@@ -51,18 +65,7 @@ pair<string, string> getNextSequentialCard(vector< pair<string, string> > &cards
 	return cards[num];
 }
 
-// constants used in the code
-string DELIMITER = "\n\e[4m                                                  \e[0m\n";
-string DELIMITER_WITHOUT_NEWLINES = "\e[4m                                                  \e[0m";
-string LINE_COMMENT = "//";
-// constants that you should update from time to time (manually)
-string VERSION = "2.0.2";
-string LAST_UPDATED = "Jan. 2018";
-// arguments that are handled
-string ARG_VERSION = "--version";
-string ARG_RANDOM = "-r"; string ARG_SEMIRANDOM = "-R"; string ARG_SEQUENTIAL = "-s";
-
-int getcard_version = 0; // set the version to either 0 (normal) or 1 (only show the same card again after having shown every other card)
+int getcard_version = DEFAULT_CARD_SORTING; // set the version to either 0 (normal) or 1 (only show the same card again after having shown every other card)
 
 // get either a random card or a semirandom card, depending on how getcard_version is set
 pair<string, string> getCard(vector< pair<string, string> > &cards) {
