@@ -20,11 +20,19 @@ Additionally, `--version` may be passed as an argument with or without accompany
 
 *These are mutually exclusive*. The last specified will be used if you provide multiple.
 
-`-r` for random cards
+`-r` for random cards (default)
 
 `-R` for random cards that have not yet been shown. This option basically re-shuffles the deck when you're through all cards and then goes through it sequentially.
 
 `-s`for sequential loading of cards.
+
+#### Show progress
+
+*Progress is not available for the default `-r` mode*. If you use it anyways, it will just do nothing.
+
+`-p`to display progress (default)
+
+`-P` to hide progresss
 
 ## Flashcard File
 The flashcard file contains n flashcards in the following manner:

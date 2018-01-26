@@ -19,16 +19,20 @@ random_device rng;
 string DELIMITER = "\n\e[4m                                                  \e[0m\n";
 string DELIMITER_WITHOUT_NEWLINES = "\e[4m                                                  \e[0m";
 string LINE_COMMENT = "//";
-int DEFAULT_CARD_SORTING = 0;
+int DEFAULT_CARD_SORTING = 0; // 0 random, 1 semirandom, 2 sequential
+int DEFAULT_SHOW_PROGRESS = 1; // 1 to show progress
 // constants that you should update from time to time (manually)
 string VERSION = "2.0.3";
 string LAST_UPDATED = "Jan. 2018";
 // arguments that are handled
 string ARG_VERSION = "--version";
 string ARG_RANDOM = "-r"; string ARG_SEMIRANDOM = "-R"; string ARG_SEQUENTIAL = "-s";
+string ARG_PROGRESS = "-p"; string ARG_NO_PROGRESS = "-P";
 
 
 // Only use either getRandomCard, getNextCard or getSequentialCard unless you have made sure you noticed that they might use the same global variables.
+int getcard_version = DEFAULT_CARD_SORTING; // set the version to either 0 (normal) or 1 (only show the same card again after having shown every other card)
+int show_progress = DEFAULT_SHOW_PROGRESS;
 
 pair<string, string> getRandomCard(vector< pair<string, string> > &cards) {
 	int num = rng() % cards.size();
@@ -64,8 +68,6 @@ pair<string, string> getNextSequentialCard(vector< pair<string, string> > &cards
 	}
 	return cards[num];
 }
-
-int getcard_version = DEFAULT_CARD_SORTING; // set the version to either 0 (normal) or 1 (only show the same card again after having shown every other card)
 
 // get either a random card or a semirandom card, depending on how getcard_version is set
 pair<string, string> getCard(vector< pair<string, string> > &cards) {
@@ -133,10 +135,22 @@ int main(int argc, char *argv[]) {
 			// toggle getRandomCard() or getNextCard() or getNextSequentialCard()
 			if (argv[i] == ARG_RANDOM) {
 				getcard_version = 0;
+				continue;
 			} else if (argv[i] == ARG_SEMIRANDOM){
 				getcard_version = 1;
+				continue;
 			} else if (argv[i] == ARG_SEQUENTIAL){
 				getcard_version = 2;
+				continue;
+			}
+			
+			// toggle progress showing
+			if (argv[i] == ARG_PROGRESS){
+				show_progress = 1;
+				continue;
+			} else if (argv[i] == ARG_NO_PROGRESS){
+				show_progress = 0;
+				continue;
 			}
 			
 			// if argument is probably a filename
@@ -168,11 +182,14 @@ int main(int argc, char *argv[]) {
 		
 		// show progress depending on setting
 		std::stringstream progress;
-		int cardProgress = current_card_index;
-		if (cardProgress == 0) {cardProgress = cards.size();}
-		progress << "\033[1;31m" << "(" << cardProgress << "/" << cards.size() << ") "<<"\033[0m"; // bold red text
-		string progres = progress.str();
-		if ( getcard_version == 0) { progres = ""; } // don't print progress if cards are completely random
+		string progres = "";
+		if (show_progress == 1){
+			int cardProgress = current_card_index;
+			if (cardProgress == 0) {cardProgress = cards.size();}
+			progress << "\033[1;31m" << "(" << cardProgress << "/" << cards.size() << ") "<<"\033[0m"; // bold red text
+			progres = progress.str();
+			if ( getcard_version == 0) { progres = ""; } // don't print progress if cards are completely random
+		}
 		
 		cout << progres << "\e[1;96m" << card.first << "\e[0m"; // escape characters for bold blue text
 		cin.get();
