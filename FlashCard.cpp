@@ -165,7 +165,16 @@ int main(int argc, char *argv[]) {
 	cout << "Beginning training!!" << DELIMITER;
 	while (true) {
 		pair<string, string> card = getCard(cards); // get (default) a random card or (if passed -R) a semirandom card (random, but never repeated unless no cards left)
-		cout << "\e[1;96m" << card.first << "\e[0m"; // escape characters for bold text
+		
+		// show progress depending on setting
+		std::stringstream progress;
+		int cardProgress = current_card_index;
+		if (cardProgress == 0) {cardProgress = cards.size();}
+		progress << "\033[1;31m" << "(" << cardProgress << "/" << cards.size() << ") "<<"\033[0m"; // bold red text
+		string progres = progress.str();
+		if ( getcard_version == 0) { progres = ""; } // don't print progress if cards are completely random
+		
+		cout << progres << "\e[1;96m" << card.first << "\e[0m"; // escape characters for bold blue text
 		cin.get();
 		vector<string> lines = split(card.second, '|');
 		int count = lines.size();
