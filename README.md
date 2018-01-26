@@ -12,9 +12,15 @@ The program has to be compiled using the C++11 standard.
 ## Execution
 The program is executed by calling ./FlashCard in the same directory as the program.
 It can either be called with the name(s) of flashcard files as arguments or without. If called without
-the program will ask for the name of the flashcard file, which must be in the same directory.
+the program will ask for the name of the flashcard file, which must be in the same directory. If the same file is provided multiple times, it will be loaded multiple times
 
-Additionally, `--version` may be passed as an argument with or without accompanying flashcard files. However, do not pass `--version` multiple times!
+Additionally, `--version` may be passed as an argument with or without accompanying flashcard files. 
+
+#### Card sorting options
+
+`-r` for random cards
+
+`-R` for random cards that have not yet been shown. This option basically re-shuffles the deck when you're through all cards and then goes through it sequentially.
 
 ## Flashcard File
 The flashcard file contains n flashcards in the following manner:

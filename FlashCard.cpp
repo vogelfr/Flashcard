@@ -14,16 +14,21 @@ using namespace std;
 
 random_device rng;
 
+// Only use either getRandomCard, getNextCard or getSequentialCard unless you have made sure you noticed that they might use the same global variables.
+
 pair<string, string> getRandomCard(vector< pair<string, string> > &cards) {
-int num = rng() % cards.size();
-return cards[num];
+	int num = rng() % cards.size();
+	return cards[num];
 }
 
 // get the cards in random order, but get all of them before starting over with a new random order
 // shuffles the passed vector
 unsigned int current_card_index = 0; // pls don't modify this outside of this function
+// Only use either getRandomCard, getNextCard or getSequentialCard unless you have made sure you noticed that they might use the same global variables.
 pair<string, string> getNextCard(vector< pair<string, string> > &cards) {
-	if(current_card_index == 0){
+	// note that 0 is the last index actually printed
+	
+	if(current_card_index == 0){ 
 		std::random_shuffle(std::begin(cards), std::end(cards));
 	}
 	current_card_index ++;
@@ -32,6 +37,18 @@ pair<string, string> getNextCard(vector< pair<string, string> > &cards) {
 		current_card_index = current_card_index % cards.size();
 	}
 	return cards[current_card_index];
+}
+
+// Only use either getRandomCard, getNextCard or getSequentialCard unless you have made sure you noticed that they might use the same global variables.
+// This function steps sequentially through the cards vector.
+pair<string, string> getNextSequentialCard(vector< pair<string, string> > &cards) {
+	int num = current_card_index;
+	current_card_index ++; // next card index
+	// if the new index is too large, scale it back down. This should usually result in 0
+	if ( current_card_index >= cards.size() ){
+		current_card_index = current_card_index % cards.size();
+	}
+	return cards[num];
 }
 
 // constants used in the code
@@ -43,14 +60,23 @@ string VERSION = "2.0.2";
 string LAST_UPDATED = "Jan. 2018";
 // arguments that are handled
 string ARG_VERSION = "--version";
-string ARG_RANDOM = "-r"; string ARG_SEMIRANDOM = "-R";
+string ARG_RANDOM = "-r"; string ARG_SEMIRANDOM = "-R"; string ARG_SEQUENTIAL = "-s";
 
 int getcard_version = 0; // set the version to either 0 (normal) or 1 (only show the same card again after having shown every other card)
 
 // get either a random card or a semirandom card, depending on how getcard_version is set
 pair<string, string> getCard(vector< pair<string, string> > &cards) {
-	pair<string, string> ret = (getcard_version == 0) ? getRandomCard(cards) : getNextCard(cards);
-	return ret;
+	switch (getcard_version){
+		case 0:
+			return getRandomCard(cards);
+		case 1:
+			return getNextCard(cards);
+		case 2:
+			return getNextSequentialCard(cards);
+		// default should never be needed because the global variable is initialized, but you never know
+		default:
+			return getRandomCard(cards);
+	}
 }
 
 vector<string> &splits(const std::string &s, char delim, std::vector<std::string> &elems) {
@@ -101,11 +127,13 @@ int main(int argc, char *argv[]) {
 			
 			}
 			
-			// toggle getRandomCard() or getNextCard()
+			// toggle getRandomCard() or getNextCard() or getNextSequentialCard()
 			if (argv[i] == ARG_RANDOM) {
 				getcard_version = 0;
 			} else if (argv[i] == ARG_SEMIRANDOM){
 				getcard_version = 1;
+			} else if (argv[i] == ARG_SEQUENTIAL){
+				getcard_version = 2;
 			}
 			
 			// if argument is probably a filename
