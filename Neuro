@@ -165,7 +165,7 @@ Size of amoeba dubia genome
 Excitatory receptors at dendrites (name, V(drive))
 AMPA/NMDA, maxed cation V(drive) = ~0mV
 Inhibitory receptors at dendrites (Name, [Molecule], V(drive))
-GABA A, Cloride(Cl), V(drive) = -65mV|GABA B, Potassium(K), V(drive) = -90mV
+GABA A, Chloride(Cl), V(drive) = -65mV|GABA B, Potassium(K), V(drive) = -90mV
 Nernst Equation
 Reversal potential for each ion type|E_k = RT/zF ln [K+]_o/[K+]_i
 Goldman-Hodgkin-Katz Equation
@@ -177,7 +177,7 @@ Recurrent artificial neural network (John Hopfield, 1982)|Model for understandin
 Hopfield net
 Complete undirected graph G = (V,f)|V$set of neurons|f:V^2 -> R$pairs of nodes to connectivity weight|No unit has connection with itself|Connections are symmetric
 Hopfield net updating
-s_i = sum_j(w_ij * s_j >= theta_i ? +1 : -1|w_ij$connection weight from unit i to j|s_j$state of unit j|theta_i$threshold of unit i
+s_i = sum_j(w_ij * s_j) >= theta_i ? +1 : -1|w_ij$connection weight from unit i to j|s_j$state of unit j|theta_i$threshold of unit i
 Difference perceptron to Hopfield network
 Tresholds of neurons never updated in Hopfield network
 Feed-forward network

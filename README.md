@@ -1,5 +1,5 @@
 # Flashcard
-Small flashcard programm
+Small flashcard program
 
 FlashCard v2.0.3
 Jonathan Rosenthal, Frédéric Vogel, Eric Mink
@@ -50,7 +50,7 @@ The flashcard file contains n flashcards in the following manner:
 - `$`:  Delimits a tab character *inside* of the card
 - Any line starting with `//` will be ignored (since v 2.0.2)
 
-The symbols '|', '$' and '\n' also break the flow of the proram, requiring the user to type in enter to continue
+The symbols '|', '$' and '\n' also break the flow of the program, requiring the user to type in enter to continue
 the execution.
 
 ## Closing
