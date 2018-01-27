@@ -179,6 +179,6 @@ Complete undirected graph G = (V,f)|V$set of neurons|f:V^2 -> R$pairs of nodes t
 Hopfield net updating
 s_i = sum_j(w_ij * s_j) >= theta_i ? +1 : -1|w_ij$connection weight from unit i to j|s_j$state of unit j|theta_i$threshold of unit i
 Difference perceptron to Hopfield network
-Tresholds of neurons never updated in Hopfield network
+Thresholds of neurons never updated in Hopfield network
 Feed-forward network
 Neural network without loops or cycle|Input layer -> (Hidden layer)* -> Output
