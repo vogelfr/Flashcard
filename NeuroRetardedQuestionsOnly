@@ -16,8 +16,7 @@ Human brain neuron count
 Human brain synapse count
 approx 10^15
 Human brain synapse count =
-[synapse count per neuron]*[#neurons]|
-10^4 * 10^11 = 10^15
+[synapse count per neuron]*[#neurons]|10^4 * 10^11 = 10^15
 Human brain mass percentage of whole body mass
 2%
 Human brain energy consumption of whole body's
@@ -55,4 +54,48 @@ Weight and #neurons of Capuchin Monkey
 53g$3.7 Billion
 Weight and #neurons of Macaque Monkey
 87g$6.4 Billion
+#nerve cells in a C. Elegans
+300
+#nerve cells in a Fruit Fly
+100'000
+#nerve cells in a Honey Bee
+960'000
+#nerve cells in a Frog
+16 million
+#nerve cells in a Mouse
+75 million
+#nerve cells in a Cat
+1 billion
+#nerve cells in a Chimpanzee
+6.7 billion
+#nerve cells in a human
+85 billion
+Size of the amoeba dubia genome
+200x human genome
+// other
+Proportion of neocortex to the entire brain
+80-85%
+Number of nerve fibers from the retina to the thalamus for carrying visual information
+1 million for each eye
+Meters of axons contained by 1 mm^3 of gray matter
+4'000m
+Meters of axons contained by 1 mm^3 of white matter
+9m
+Length of a synapse
+1 micrometers
+Length of a neuron
+100 micrometers
+// potentials
+Neuron resting potential
+-70mV
+Neuron usual threshhold for Action Potential
++55mV
+Chloride reversal potential
+-65mV
+Potassium reversal potential
+-90mV
+Sodium reversal potential
++55mV
+RT/F expressed for the base-10 logarithm version of the nernst equation
+58mV
 
