@@ -15,7 +15,7 @@ Central Nervous System|The brain and spinal cord as well as the retina and optic
 PNS
 Peripheral Nervous System|The ganglia and nerve fibres from sensory recentors and to muscles and organs
 Meninges
-The brain and spinal cord are protected by three layers collectively known as menginges:|dura-mater: A thick leather-like inelastic layer present directly below the bone.||arachnoid-mater: A thin, delicate, middle layer present directly below the dura-mater. Has spider web like filamentous extensions into the sub-arachnoid space which reach the pia-mater||pia-mater: A thin, delicate, translucent layer that directly lines the gyri/sulci of the brain, and the spinal cord. Rich in blood-vessels that supply oxygen and nutrients to the brain. Functionally, it forms the blood brain barrier (BBB).
+The brain and spinal cord are protected by three layers collectively known as meninges:|dura-mater: A thick leather-like inelastic layer present directly below the bone.||arachnoid-mater: A thin, delicate, middle layer present directly below the dura-mater. Has spider web like filamentous extensions into the sub-arachnoid space which reach the pia-mater||pia-mater: A thin, delicate, translucent layer that directly lines the gyri/sulci of the brain, and the spinal cord. Rich in blood-vessels that supply oxygen and nutrients to the brain. Functionally, it forms the blood brain barrier (BBB).
 CSF
 Cerebrospinal fluid|A pool of fluid cushioning the brain and spinal cord. CSF is produced by the choroid plexus in the ventricles of the brain. In the cranium (skull), the cerebrospinal fluid is present in the sub-arachnoid space, in between the arachnoid-mater and the pia-mater.
 Brain regions during development
@@ -37,9 +37,9 @@ Meters of axon contained by 1mm^3 of gray matter and white matter
 Neuron parts
 From input to output neurons have 4 parts:|Dendrite|Soma|Axon|Synapse||Dendrites recieve input from other neurons and transmit these to the soma. The soma is the neuron nucleus and can fire resulting in a signal which is transmitted by the axon to the synapses which transmit the signals to further neurons.
 Hyperpolarization
-Neurons are hyperpolarized which means the have a resting potential of -70 mV withing and 0 mV outside of them. Hyperpolarization refers to an increase in membrane potential whereas depolarization refers to a decrease in membrane potential
-Synaptice Currents
-Excitatory/Inhibitory Current: Positive/Negative charge resulting from from the difference in extra and intracellular space.|Leak Current: Current which leaves the intracellular space before reaching the soma.
+Neurons are hyperpolarized which means they have a resting potential of -70 mV within and 0 mV outside of them. Hyperpolarization refers to an increase in membrane potential whereas depolarization refers to a decrease in membrane potential
+Synaptic Currents
+Excitatory/Inhibitory Current: Positive/Negative charge resulting from the difference in extra and intracellular space.|Leak Current: Current which leaves the intracellular space before reaching the soma.
 Action Potential Components
 Action potentials are all or nothing operations which have four components which take place over the course of 1-2 ms:||Depolarization|Overshoot|Repolarization/Hyperpolarization|Refactory Period
 Myelination
@@ -52,8 +52,8 @@ Chemical currents of Chloride, Potassium and Sodium
 Chloride: -65mV, Potassium: -90mv, Sodium: 55mV. The latter two are sent out during action potentials.
 Membrane Potential
 Vm = Vi - Vo
-Ernst Equation
-K+ Equilibrium Potential := E_k = (RT)/(zF) ln (K+inside/K+outside) ~ 58 * ln (K+inside/K+outside)
+Nernst Equation
+K+ Equilibrium Potential := E_k = (RT)/(zF) ln (K+outside/K+inside) ≈ 58/z * log_10 (K+outside/K+inside)
 Action Potential Chemical Changes
 Natrium increases quickly until inactivation kicks in and it decreases again. K+ increases more slowly and only decreases once the voltage has decreased. The threshold for an AP is where the inward Na+ current exactly balances the outward K+ current.
 Hebb's Postulate
@@ -129,7 +129,7 @@ Synapse length
 neuron length
 100 micro m
 Basal Ganglia Function
-Regulate voluntary movement
+Regulate voluntary movement, procedural learning
 Cerebellum Function
 Coordinated motor behavior|Postural Adjustments
 Hypothalamus details
@@ -165,7 +165,7 @@ Size of amoeba dubia genome
 Excitatory receptors at dendrites (name, V(drive))
 AMPA/NMDA, maxed cation V(drive) = ~0mV
 Inhibitory receptors at dendrites (Name, [Molecule], V(drive))
-GABA A, Cloride(Cl), V(drive) = -65mV|GABA B, Potassium(K), V(drive) = -90mV
+GABA A, Chloride(Cl), V(drive) = -65mV|GABA B, Potassium(K), V(drive) = -90mV
 Nernst Equation
 Reversal potential for each ion type|E_k = RT/zF ln [K+]_o/[K+]_i
 Goldman-Hodgkin-Katz Equation
@@ -175,10 +175,10 @@ f(x) = w*x+b > 0 ? 1 : 0|w$weights|w*x$dot product|b$bias|linearly separable
 Hopfield network
 Recurrent artificial neural network (John Hopfield, 1982)|Model for understanding human memory|Network cannot return to previous state (no cycle)|Network always enters stable state
 Hopfield net
-Complete undirected graph G = (V,f)|V$set of neurons|f:V^2 -> R$pairs of nodes to connectivity wheight|No unit has connection with itself|Connections are symmetric
+Complete undirected graph G = (V,f)|V$set of neurons|f:V^2 -> R$pairs of nodes to connectivity weight|No unit has connection with itself|Connections are symmetric
 Hopfield net updating
-s_i = sum_j(w_ij * s_j >= theta_i ? +1 : -1|w_ij$connection weight from unit i to j|s_j$state of unit j|theta_i$threshold of unit i
+s_i = sum_j(w_ij * s_j) >= theta_i ? +1 : -1|w_ij$connection weight from unit i to j|s_j$state of unit j|theta_i$threshold of unit i
 Difference perceptron to Hopfield network
-Tresholds of neurons never updated in Hopfield network
+Thresholds of neurons never updated in Hopfield network
 Feed-forward network
 Neural network without loops or cycle|Input layer -> (Hidden layer)* -> Output
